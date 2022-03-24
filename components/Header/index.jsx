@@ -9,7 +9,7 @@ const StyledHeader = styled('header', {
     padding: "0 24px",
     position: "sticky",
     userSelect: 'none',
-    backgroundColor: "#121212",
+    background: "#121212",
 
     display: "flex",
     flexWrap: "wrap",
@@ -18,7 +18,7 @@ const StyledHeader = styled('header', {
     justifyContent: "space-between"
 });
 
-const StyledBrand = styled('div', {
+const StyledBrand = styled('a', {
     display: "flex",
     alignItems: "center"
 });
@@ -26,8 +26,8 @@ const StyledBrand = styled('div', {
 export default class Header extends React.Component {
     render() {
         return (
-            <StyledHeader data-tauri-drag-region>
-                <StyledBrand>
+            <StyledHeader css={this.props.css} data-tauri-drag-region>
+                <StyledBrand href=".">
                     {this.props.brand}
                 </StyledBrand>
                 {this.props.children}

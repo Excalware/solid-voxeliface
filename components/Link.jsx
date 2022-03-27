@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@stitches/react';
 
 const StyledLink = styled('a', {
-    color: "#c7c6c6",
+    color: "#7a98d1",
     cursor: "pointer",
     display: "flex",
     fontSize: "1rem",

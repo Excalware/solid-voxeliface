@@ -18,7 +18,7 @@ const StyledInputTag = styled('input', {
     background: "none",
     transition: "border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     fontWeight: 500,
-    fontFamily: "HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
+    fontFamily: "Gotham, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
     borderRadius: 4,
 
     "&:read-only": {

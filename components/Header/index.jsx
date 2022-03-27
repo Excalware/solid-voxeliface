@@ -27,7 +27,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <StyledHeader css={this.props.css} data-tauri-drag-region>
-                <StyledBrand href=".">
+                <StyledBrand href="/">
                     {this.props.brand}
                 </StyledBrand>
                 {this.props.children}

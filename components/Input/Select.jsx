@@ -17,7 +17,7 @@ const StyledSelect = styled('button', {
     transition: "border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     fontWeight: 500,
     alignItems: "center",
-    fontFamily: "HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
+    fontFamily: "Gotham, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
     borderRadius: 8,
     backgroundColor: "#181818",
 

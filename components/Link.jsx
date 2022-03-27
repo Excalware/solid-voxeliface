@@ -7,7 +7,7 @@ const StyledLink = styled('a', {
     display: "flex",
     fontSize: "1rem",
     transition: "color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-    fontFamily: "HCo Gotham SSm, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
+    fontFamily: "Gotham, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
     fontWeight: 500,
     lineHeight: 1.43,
     alignItems: "center",

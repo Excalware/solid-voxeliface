@@ -13,8 +13,9 @@ export default class App extends React.Component {
         return (
             <StyledApp>
                 <Head>
-                    <title>{this.props.title ?? "Voxelified"}</title>
+                    <title>{this.props.title ?? "Missing Title"}</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+                    <meta name="description" content={this.props.description ?? "Missing Description"}/>
                     <meta property="og:title" content="Voxel"/>
                     <meta property="og:description" content="Placeholder"/>
                     <meta property="og:image" content="/voxel.png"/>

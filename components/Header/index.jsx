@@ -4,10 +4,10 @@ import { styled } from '@stitches/react';
 const StyledHeader = styled('header', {
     top: 0,
     width: "100%",
-    height: 64,
     zIndex: 1100,
     padding: "0 24px",
     position: "sticky",
+    minHeight: 64,
     userSelect: 'none',
     background: "#121212",
 
@@ -19,8 +19,11 @@ const StyledHeader = styled('header', {
 });
 
 const StyledBrand = styled('a', {
+    gap: "8px",
+    color: "#fff",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    textDecoration: "none"
 });
 
 export default class Header extends React.Component {

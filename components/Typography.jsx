@@ -15,7 +15,7 @@ export default class Typography extends React.Component {
     render() {
         const props = this.props;
         return (
-            <StyledTypography {...this.props} style={{
+            <StyledTypography {...this.props} css={{
                 width: props.width,
                 color: props.color,
                 margin: props.margin,
@@ -26,7 +26,7 @@ export default class Typography extends React.Component {
                 fontFamily: props.family,
                 lineHeight: props.lineheight ?? 1.43,
                 whiteSpace: props.whitespace,
-                ...props.style
+                ...props.css
             }}>
                 {this.props.text}
                 {this.props.children}

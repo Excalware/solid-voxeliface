@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from './Grid';
+import Grid from '../Grid';
 
 export default class App extends React.Component {
     render() {

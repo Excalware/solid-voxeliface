@@ -9,7 +9,7 @@ export default class Grid extends React.Component {
     render() {
         const props = this.props;
         return (
-            <StyledGrid css={{
+            <StyledGrid onClick={props.onClick} css={{
                 gap: props.spacing,
                 width: props.width,
                 margin: props.margin,

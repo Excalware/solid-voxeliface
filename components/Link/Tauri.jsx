@@ -1,7 +1,9 @@
 import React from 'react';
 import { styled } from '@stitches/react';
+import { Link as RouterLink } from 'react-router-dom';
 
-const StyledLink = styled('a', {
+const StyledLink = styled(RouterLink, {
+    gap: 8,
     color: "#7a98d1",
     cursor: "pointer",
     display: "flex",
@@ -18,19 +20,15 @@ const StyledLink = styled('a', {
     }
 });
 
-const StyledIcon = styled('i', {
-    color: "inherit",
-    marginRight: 8
-});
-
-export default class Link extends React.Component {
+export default class TauriLink extends React.Component {
     render() {
         return (
-            <StyledLink {...this.props}>
-                <StyledIcon className={this.props.icon} style={{
-                    display: this.props.className ? "block" : "none"
-                }}/>
-                {this.props.children ?? "Link"}
+            <StyledLink {...this.props} css={{
+                color: this.props.color,
+                ...this.props.css
+            }}>
+                {this.props.icon}
+                {this.props.children ?? this.props.text ?? "Link"}
             </StyledLink>
         );
     }

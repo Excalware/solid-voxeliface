@@ -11,26 +11,23 @@ const StyledTypography = styled('span', {
     alignItems: "center"
 });
 
-export default class Typography extends React.Component {
-    render() {
-        const props = this.props;
-        return (
-            <StyledTypography {...this.props} css={{
-                width: props.width,
-                color: props.color,
-                margin: props.margin,
-                height: props.height,
-                fontSize: props.size,
-                textAlign: props.textalign,
-                fontWeight: props.weight ?? 500,
-                fontFamily: props.family,
-                lineHeight: props.lineheight ?? 1.43,
-                whiteSpace: props.whitespace,
-                ...props.css
-            }}>
-                {this.props.text}
-                {this.props.children}
-            </StyledTypography>
-        );
-    }
+export default function Typography(props) {
+    return (
+        <StyledTypography {...props} css={{
+            width: props.width,
+            color: props.color,
+            margin: props.margin,
+            height: props.height,
+            fontSize: props.size,
+            textAlign: props.textalign,
+            fontWeight: props.weight ?? 500,
+            fontFamily: props.family,
+            lineHeight: props.lineheight ?? 1.43,
+            whiteSpace: props.whitespace,
+            ...props.css
+        }}>
+            {props.text}
+            {props.children}
+        </StyledTypography>
+    );
 };

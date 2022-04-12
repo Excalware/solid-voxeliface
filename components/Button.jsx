@@ -84,18 +84,13 @@ const StyledButton = styled('a', {
     }
 });
 
-export default class Button extends React.Component {
-    render() {
-        const { size, theme, onClick, disabled } = this.props;
-        return (
-            <StyledButton {...this.props} size={size ?? "small"} theme={theme ?? "primary"} onClick={(...args) => {
-                if(!disabled && onClick)
-                    return onClick(...args);
-            }} css={{
-                ...this.props.css
-            }}>
-                {this.props.children ?? "Button"}
-            </StyledButton>
-        );
-    }
+export default function Button({ size, theme, onClick, disabled, children, ...props }) {
+    return (
+        <StyledButton {...props} size={size ?? "small"} theme={theme ?? "primary"} onClick={(...args) => {
+            if(!disabled && onClick)
+                return onClick(...args);
+        }} disabled={disabled}>
+            {children ?? "Button"}
+        </StyledButton>
+    );
 };

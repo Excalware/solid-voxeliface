@@ -23,36 +23,25 @@ const WindowButtonComponent = styled('button', {
     }
 });
 
-export default class WindowButtons extends React.Component {
-    closeWindow() {
-        appWindow.close();
-    }
-
-    maximizeWindow() {
-        appWindow.toggleMaximize();
-    }
-
-    minimizeWindow() {
-        appWindow.minimize();
-    }
-
-    render() {
-        return (
-            <StyledWindowButtons spacing="16px" direction="horizontalReverse" alignItems="center">
-                <WindowButtonComponent color="#ff7070" onClick={this.closeWindow.bind(this)} style={{
-                    "&:hover": {
-                        color: "#ff7070"
-                    }
-                }}>
-                    <XLg/>
-                </WindowButtonComponent>
-                <WindowButtonComponent onClick={this.maximizeWindow.bind(this)}>
-                    <Fullscreen/>
-                </WindowButtonComponent>
-                <WindowButtonComponent onClick={this.minimizeWindow.bind(this)}>
-                    <FullscreenExit/>
-                </WindowButtonComponent>
-            </StyledWindowButtons>
-        );
-    }
+export default function WindowButtons() {
+    const maximize = _ => appWindow.toggleMaximize();
+    const minimize = _ => appWindow.minimize();
+    const close = _ => appWindow.close();
+    return (
+        <StyledWindowButtons spacing="16px" direction="horizontalReverse" alignItems="center">
+            <WindowButtonComponent color="#ff7070" onClick={close} style={{
+                "&:hover": {
+                    color: "#ff7070"
+                }
+            }}>
+                <XLg/>
+            </WindowButtonComponent>
+            <WindowButtonComponent onClick={maximize}>
+                <Fullscreen/>
+            </WindowButtonComponent>
+            <WindowButtonComponent onClick={minimize}>
+                <FullscreenExit/>
+            </WindowButtonComponent>
+        </StyledWindowButtons>
+    );
 };

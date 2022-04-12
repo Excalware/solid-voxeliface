@@ -30,18 +30,15 @@ const StyledSpinner2 = styled('span', {
     borderRadius: "50%"
 });
 
-export default class BasicSpinner extends React.Component {
-    render() {
-        const { margin, visible } = this.props;
-        const size = this.props.size ?? 32;
-        return (
-            <StyledSpinner style={{
-                "--size": `${size}px`,
-                margin: margin ?? 0,
-                display: `${(visible == null ? true : visible) ? "block" : "none"}`
-            }}>
-                <StyledSpinner2/>
-            </StyledSpinner>
-        );
-    }
+export default function BasicSpinner({ size, margin, visible }) {
+    return (
+        <StyledSpinner css={{
+            '--size': `${size ?? 32}px`,
+            margin: margin ?? 0,
+            display: `${(visible == null ? true : visible) ? "block" : "none"}`,
+            overflow: 'hidden'
+        }}>
+            <StyledSpinner2/>
+        </StyledSpinner>
+    );
 };

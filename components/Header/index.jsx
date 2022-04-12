@@ -26,15 +26,13 @@ const StyledBrand = styled('a', {
     textDecoration: "none"
 });
 
-export default class Header extends React.Component {
-    render() {
-        return (
-            <StyledHeader css={this.props.css} data-tauri-drag-region>
-                <StyledBrand href="/">
-                    {this.props.brand}
-                </StyledBrand>
-                {this.props.children}
-            </StyledHeader>
-        );
-    }
+export default function Header({ css, brand, children }) {
+    return (
+        <StyledHeader css={css} data-tauri-drag-region>
+            <StyledBrand href="/">
+                {brand}
+            </StyledBrand>
+            {children}
+        </StyledHeader>
+    );
 };

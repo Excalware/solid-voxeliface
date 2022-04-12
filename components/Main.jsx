@@ -16,15 +16,13 @@ const StyledMain = styled('main', {
     }
 });
 
-export default class Main extends React.Component {
-    render() {
-        return (
-            <StyledMain style={{
-                width: this.props.width,
-                ...this.props.style
-            }}>
-                {this.props.children}
-            </StyledMain>
-        );
-    }
+export default function Main({ css, width, children }) {
+    return (
+        <StyledMain css={{
+            width: width,
+            ...css
+        }}>
+            {children}
+        </StyledMain>
+    );
 };

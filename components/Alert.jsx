@@ -56,26 +56,24 @@ const StyledAlert = styled('div', {
     }
 });
 
-export default class Alert extends React.Component {
-    render() {
-        const AlertIcon = Icons[this.props.severity];
-        return (
-            <StyledAlert
-                severity={this.props.severity ?? "success"}
-                direction="horizontal"
-                css={{
-                    margin: this.props.margin,
-                    minWidth: this.props.width
-                }}
-            >
-                <Grid margin="10px 12px 10px 0" direction="vertical">
-                    <AlertIcon size={16} color={'#fff'}/>
-                </Grid>
-                <Grid margin="8px 0" direction="vertical">
-                    <Typography text={this.props.title} size="1rem" color="inherit" margin="0 0 0.35em 0"/>
-                    <Typography text={this.props.body} size="0.9rem" color="inherit"/>
-                </Grid>
-            </StyledAlert>
-        );
-    }
-}
+export default function Alert({ body, title, width, margin, severity }) {
+    const AlertIcon = Icons[severity];
+    return (
+        <StyledAlert
+            severity={severity ?? "success"}
+            direction="horizontal"
+            css={{
+                margin: margin,
+                minWidth: width
+            }}
+        >
+            <Grid margin="10px 12px 10px 0" direction="vertical">
+                <AlertIcon size={16} color={'#fff'}/>
+            </Grid>
+            <Grid margin="8px 0" direction="vertical">
+                <Typography text={title} size="1rem" color="inherit" margin="0 0 0.35em 0"/>
+                <Typography text={body} size="0.9rem" color="inherit"/>
+            </Grid>
+        </StyledAlert>
+    );
+};

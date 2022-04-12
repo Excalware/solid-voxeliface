@@ -20,16 +20,14 @@ const StyledLink = styled(RouterLink, {
     }
 });
 
-export default class TauriLink extends React.Component {
-    render() {
-        return (
-            <StyledLink {...this.props} css={{
-                color: this.props.color,
-                ...this.props.css
-            }}>
-                {this.props.icon}
-                {this.props.children ?? this.props.text ?? "Link"}
-            </StyledLink>
-        );
-    }
+export default function TauriLink({ css, icon, text, color, children, ...props }) {
+    return (
+        <StyledLink {...props} css={{
+            color: color,
+            ...css
+        }}>
+            {icon}
+            {children ?? text ?? "Link"}
+        </StyledLink>
+    );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { styled } from '@stitches/react';
-import { withRouter } from 'next/router';
 import * as Icon from 'react-bootstrap-icons';
 
 const StyledLink = styled('a', {
@@ -24,7 +23,7 @@ const StyledLink = styled('a', {
     }
 });
 
-export default withRouter(class NavigationLink extends React.Component {
+export default class NavigationLink extends React.Component {
     render() {
         const LinkIcon = this.props.icon && Icon[this.props.icon];
         return (
@@ -38,4 +37,4 @@ export default withRouter(class NavigationLink extends React.Component {
             </StyledLink>
         );
     }
-});
+};

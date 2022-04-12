@@ -51,71 +51,68 @@ const MobileGrid = styled(Grid, {
     backgroundColor: 'rgba(0, 0, 0, 0.2)'
 });
 
-export default class Stepper extends React.Component {
-    render() {
-        const isMobile = util.isMobile();
-        const steps = [...this.props.steps];
-        let stepIndex = 0;
-        for (let i = 1; i < steps.length; i += 2) {
-            steps.splice(i, 0, "divide");
-        }
-        return (
-            <Grid width={isMobile ? "100%" : null} direction="vertical">
-                <Grid padding={isMobile ? "16px" : "24px"} css={{
-                    alignItems: 'center',
-                    background: '#2C2C2C',
-                    borderRadius: 8,
-                    justifyContent: 'center',
+export default function Stepper({ step, steps }) {
+    const isMobile = util.isMobile();
+    const stepIndex = 0;
+    for (let i = 1; i < steps.length; i += 2)
+        steps.splice(i, 0, "divide");
+    
+    return (
+        <Grid width={isMobile ? "100%" : null} direction="vertical">
+            <Grid padding={isMobile ? "16px" : "24px"} css={{
+                alignItems: 'center',
+                background: '#2C2C2C',
+                borderRadius: 8,
+                justifyContent: 'center',
 
-                    '@media screen and (max-width: 768px)': {
-                        borderRadius: 0
-                    }
-                }}>
-                    {
-                        isMobile ?
-                            <MobileGrid spacing="8px" alignItems="center">
-                                <StepComponent2 css={{
-                                    color: '#00E87E'
-                                }}>
-                                    <Typography text={`Step ${this.props.step + 1}/${this.props.steps.length}`} size="0.75rem" color={"#000000de"}/>
-                                </StepComponent2>
-                                <Typography text={steps[this.props.step][0]} size="12px" color="white" weight={500}/>
-                            </MobileGrid>
-                        :
-                            steps.map((step, index) =>
-                                step == "divide" ?
-                                    <DividerComponent key={index}/>
-                                :
-                                    <Grid key={index} margin="0 8px" spacing="8px" alignItems="center">
-                                        <StepComponent css={{
-                                            background: stepIndex <= this.props.step ? "#00E87E" : "rgba(255, 255, 255, 0.5)"
-                                        }}>
-                                            <Typography text={stepIndex += 1} size="0.75rem" color={"#000000de"}/>
-                                        </StepComponent>
-                                        <Typography text={step[0]} size="14px" color={stepIndex - 1 <= this.props.step ? "white" : "rgba(255, 255, 255, 0.5)"} weight={stepIndex - 1 <= this.props.step ? 500 : 300}/>
-                                    </Grid>
-                            )
-                    }
-                </Grid>
-                <GridHolder width="100%">
-                    <Grid key={1 + this.props.step} width="100%" direction="vertical" alignItems="center" css={{
-                        minWidth: '100%',
-                        position: 'relative',
-                        animation: `${animation} 1s cubic-bezier(0.4, 0, 0.2, 1)`,
-                        animationFillMode: 'forwards'
-                    }}>
-                        {this.props.step == 0 ? null : this.props.steps[this.props.step - 1][1]}
-                    </Grid>
-                    <Grid key={2 + this.props.step} width="100%" direction="vertical" alignItems="center" css={{
-                        minWidth: '100%',
-                        position: 'relative',
-                        animation: `${animation} 1s cubic-bezier(0.4, 0, 0.2, 1)`,
-                        animationFillMode: 'forwards'
-                    }}>
-                        {this.props.step == 0 ? this.props.steps[0][1] : this.props.steps[this.props.step][1]}
-                    </Grid>
-                </GridHolder>
+                '@media screen and (max-width: 768px)': {
+                    borderRadius: 0
+                }
+            }}>
+                {
+                    isMobile ?
+                        <MobileGrid spacing="8px" alignItems="center">
+                            <StepComponent2 css={{
+                                color: '#00E87E'
+                            }}>
+                                <Typography text={`Step ${step + 1}/${steps.length}`} size="0.75rem" color={"#000000de"}/>
+                            </StepComponent2>
+                            <Typography text={steps[step][0]} size="12px" color="white" weight={500}/>
+                        </MobileGrid>
+                    :
+                        steps.map((step, index) =>
+                            step == "divide" ?
+                                <DividerComponent key={index}/>
+                            :
+                                <Grid key={index} margin="0 8px" spacing="8px" alignItems="center">
+                                    <StepComponent css={{
+                                        background: stepIndex <= step ? "#00E87E" : "rgba(255, 255, 255, 0.5)"
+                                    }}>
+                                        <Typography text={stepIndex += 1} size="0.75rem" color={"#000000de"}/>
+                                    </StepComponent>
+                                    <Typography text={step[0]} size="14px" color={stepIndex - 1 <= step ? "white" : "rgba(255, 255, 255, 0.5)"} weight={stepIndex - 1 <= step ? 500 : 300}/>
+                                </Grid>
+                        )
+                }
             </Grid>
-        );
-    }
+            <GridHolder width="100%">
+                <Grid key={1 + step} width="100%" direction="vertical" alignItems="center" css={{
+                    minWidth: '100%',
+                    position: 'relative',
+                    animation: `${animation} 1s cubic-bezier(0.4, 0, 0.2, 1)`,
+                    animationFillMode: 'forwards'
+                }}>
+                    {step == 0 ? null : steps[step - 1][1]}
+                </Grid>
+                <Grid key={2 + step} width="100%" direction="vertical" alignItems="center" css={{
+                    minWidth: '100%',
+                    position: 'relative',
+                    animation: `${animation} 1s cubic-bezier(0.4, 0, 0.2, 1)`,
+                    animationFillMode: 'forwards'
+                }}>
+                    {step == 0 ? steps[0][1] : steps[step][1]}
+                </Grid>
+            </GridHolder>
+        </Grid>
+    );
 };

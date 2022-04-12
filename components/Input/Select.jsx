@@ -44,7 +44,7 @@ const StyledDropdown = styled('div', {
     border: "1px solid #343434",
     zIndex: 1000,
     display: "flex",
-    overflow: "hidden scroll",
+    overflow: "hidden auto",
     position: "absolute",
     maxHeight: "14rem",
     transform: "translateX(-50%)",

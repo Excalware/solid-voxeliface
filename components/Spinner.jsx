@@ -85,7 +85,8 @@ export default class Spinner extends React.Component {
             <StyledSpinner style={{
                 "--size": `${size}px`,
                 margin: margin ?? 0,
-                display: `${(visible == null ? true : visible) ? "block" : "none"}`
+                display: `${(visible == null ? true : visible) ? "block" : "none"}`,
+                overflow: 'hidden'
             }}>
                 <StyledSpinner2/>
             </StyledSpinner>

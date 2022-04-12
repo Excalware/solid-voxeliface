@@ -33,12 +33,10 @@ const StyledTable = styled('table', {
     }
 });
 
-export default class Table extends React.Component {
-    render() {
-        return (
-            <StyledTable>
-                {this.props.children}
-            </StyledTable>
-        );
-    }
+export default function Table(props) {
+    return (
+        <StyledTable>
+            {props.children}
+        </StyledTable>
+    );
 };

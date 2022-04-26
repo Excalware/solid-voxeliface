@@ -19,7 +19,7 @@ const StyledInputTag = styled('input', {
     transition: "border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
     fontWeight: 500,
     fontFamily: "Gotham, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
-    borderRadius: 4,
+    borderRadius: 8,
 
     "&:read-only": {
         cursor: "default"

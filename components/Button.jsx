@@ -4,14 +4,13 @@ import { styled } from '@stitches/react';
 const StyledButton = styled('a', {
     gap: 8,
     width: "fit-content",
-    border: "none",
     cursor: "pointer",
     height: "fit-content",
     outline: 0,
     display: "inline-flex",
     position: "relative",
     fontSize: ".75rem",
-    transition: "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)",
+    transition: "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)",
     fontFamily: "Nunito, sans-serif",
     fontWeight: 625,
     lineHeight: 1.43,
@@ -50,7 +49,7 @@ const StyledButton = styled('a', {
             },
             secondary: {
                 color: "#fff",
-                border: "1px solid #2a2a2a",
+                boxShadow: "inset 0 0 0 1px #2a2a2a",
                 background: "#2a2a2a",
                 "&:hover": {
                     background: "#1f1f1f",
@@ -66,7 +65,7 @@ const StyledButton = styled('a', {
             },
             tertiary: {
                 color: "#fff",
-                border: "1px solid #2a2a2a",
+                boxShadow: "0 0 0 1px #2a2a2a",
                 background: "none",
                 "&:hover": {
                     borderColor: "#e0e0e00d"

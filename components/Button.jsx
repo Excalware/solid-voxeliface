@@ -10,14 +10,14 @@ const StyledButton = styled('a', {
     display: "inline-flex",
     position: "relative",
     fontSize: ".75rem",
-    transition: "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)",
+    transition: "background 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)",
     fontFamily: "Nunito, sans-serif",
     fontWeight: 625,
     lineHeight: 1.43,
     userSelect: "none",
     alignItems: "center",
     whiteSpace: "nowrap",
-    textShadow: "0 0 4px rgba(0, 0, 0, 0.2)",
+    textShadow: "0 0 4px rgba(0, 0, 0, 0.3)",
     borderRadius: ".25rem",
     textDecoration: "none",
     justifyContent: "center",
@@ -30,6 +30,10 @@ const StyledButton = styled('a', {
         size: {
             small: {
                 padding: ".375rem .625rem"
+            },
+            smaller: {
+                padding: "0.275rem 0.55rem",
+                fontWeight: "500"
             }
         },
         theme: {

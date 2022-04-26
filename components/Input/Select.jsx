@@ -25,6 +25,16 @@ const StyledSelect = styled('button', {
         cursor: "pointer",
         borderColor: "#797979",
         backgroundColor: "#242424"
+    },
+
+    variants: {
+        disabled: {
+            true: {
+                cursor: 'not-allowed',
+                opacity: .5,
+                pointerEvents: 'none'
+            }
+        }
     }
 });
 
@@ -69,12 +79,14 @@ export default class Select extends React.Component {
 
     render() {
         return (
-            <StyledSelect onClick={_ => this.setState({ drop: true })}>
+            <StyledSelect onClick={_ => this.setState({ drop: this.props.disabled ? false : true })} disabled={this.props.disabled}>
                 <StyledInput id={this.props.id} value={this.state.value} readOnly={this.props.readOnly} disabled={this.props.disabled} onChange={this.props.onChange} placeholder={this.props.placeholder} styled={{
                     borderRadius: this.state.drop ? "4px 4px 0 0" : "4px",
                 }}/>
                 <Grid width="100%" spacing="8px" alignItems="center" justifyContent="space-between">
-                    {this.state.value !== undefined ? this.props.multi ? this.props.renderValues(this.props.children.filter(c => this.state.value.indexOf(c.props.value) >= 0), this.state.value) : this.props.children.find(c => c.props.value === this.state.value)?.props?.children : this.props.placeholder}
+                    <Grid spacing="12px" alignItems="center">
+                        {this.state.value !== undefined ? this.props.multi ? this.props.renderValues(this.props.children.filter(c => this.state.value.indexOf(c.props.value) >= 0), this.state.value) : this.props.children.find(c => c.props.value === this.state.value)?.props?.children : this.props.placeholder}
+                    </Grid>
                     <CaretDownFill/>
                 </Grid>
                 {this.state.drop &&

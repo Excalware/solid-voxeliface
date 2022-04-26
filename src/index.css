@@ -31,3 +31,15 @@ body {
 body::backdrop {
     background-color: #1D1D1D;
 }
+
+*::-webkit-scrollbar {
+    width: 12px;
+    background: #0000001a;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 2px solid #00000000;
+    border-radius: 8px;
+    background-clip: padding-box;
+    background-color: #ffffff14;
+}

@@ -7,7 +7,7 @@ const StyledGrid = styled('div', {
 
 export default function Grid(props) {
     return (
-        <StyledGrid onClick={props.onClick} css={{
+        <StyledGrid onClick={props.onClick} className={props.className} css={{
             gap: props.spacing,
             width: props.width,
             margin: props.margin,

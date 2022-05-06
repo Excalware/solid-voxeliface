@@ -9,7 +9,7 @@ const StyledHeader = styled('header', {
     position: "sticky",
     minHeight: 64,
     userSelect: 'none',
-    background: "#121212",
+    background: "$headerBackground",
 
     display: "flex",
     flexWrap: "wrap",

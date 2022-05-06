@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styled } from '@stitches/react';
 
 const StyledTabs = styled('div', {
     width: '100%',
-    border: '1px solid #ffffff14',
+    border: '1px solid $secondaryBorder',
     display: 'flex',
+    overflow: 'hidden',
     borderRadius: 4,
     flexDirection: 'column'
 });
@@ -14,13 +15,11 @@ const StyledTabsContainer = styled('div', {
     height: '32px',
     display: 'flex',
     userSelect: 'none',
-    background: '#ffffff14',
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4
+    background: '$secondaryBackground2'
 });
 
 const StyledTab = styled('button', {
-    color: '#ffffffb3',
+    color: '$secondaryColor',
     height: '100%',
     border: 'none',
     padding: 0,
@@ -41,9 +40,7 @@ const StyledPages = styled('div', {
     padding: '.6rem .8rem',
     overflow: 'hidden',
     background: '#0000001a',
-    flexDirection: 'column',
-    borderBottomLeftRadius: 4,
-    borderBottomRightRadius: 4
+    flexDirection: 'column'
 });
 
 export default function Tabs({ css, tabs, pages, value, onChange }) {
@@ -66,7 +63,7 @@ export default function Tabs({ css, tabs, pages, value, onChange }) {
             }}>
                 {tabs.map(([text, val], index) =>
                     <StyledTab key={index} css={{
-                        color: value === val && '#fff',
+                        color: value === val && '$primaryColor',
                         fontWeight: value === val && 625,
                         paddingTop: value === val ? 2 : 0,
                         borderBottom: value === val ? '2px solid #6fa95b' : 'none'

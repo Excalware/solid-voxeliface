@@ -6,29 +6,27 @@ import Grid from '../Grid';
 
 const StyledSelectItem = styled('div', {
     gap: 16,
-    display: "flex",
-    padding: "8px 16px",
-    transition: "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)",
-    whiteSpace: "pre",
-    alignItems: "center",
-    borderBottom: "1px solid #343434",
-    justifyContent: "space-between",
-    backgroundColor: "#181818",
+    display: 'flex',
+    padding: '6px 16px',
+    background: '$primaryBackground',
+    transition: 'background 250ms cubic-bezier(0.4, 0, 0.2, 1)',
+    whiteSpace: 'pre',
+    alignItems: 'center',
+    borderBottom: '1px solid $tagBorder',
+    justifyContent: 'space-between',
 
-    "&:hover": {
-        backgroundColor: "#369973"
+    '&:hover': {
+        backgroundColor: '$secondaryBackground2'
     }
 });
 
-export default class SelectItem extends React.Component {
-    render() {
-        return (
-            <StyledSelectItem onClick={() => this.props._set(this.props.value)}>
-                <Grid width="fit-content" spacing="12px" alignItems="center">
-                    {this.props.children}
-                </Grid>
-                {this.props._sel && <Check size="1.4rem"/>}
-            </StyledSelectItem>
-        );
-    }
+export default function SelectItem({ _set, _sel, value, children }) {
+    return (
+        <StyledSelectItem onClick={() => _set(value)}>
+            <Grid width="fit-content" spacing="12px" alignItems="center">
+                {children}
+            </Grid>
+            {_sel && <Check size={24}/>}
+        </StyledSelectItem>
+    );
 };

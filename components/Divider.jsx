@@ -3,7 +3,7 @@ import { styled } from '@stitches/react';
 
 const StyledDivider = styled('div', {
     borderRadius: '50%',
-    backgroundColor: 'rgba(255, 255, 255, 0.08)'
+    backgroundColor: '$gray8'
 });
 
 export default function Divider({ css, width, height, margin }) {

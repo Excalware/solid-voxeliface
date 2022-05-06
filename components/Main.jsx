@@ -7,7 +7,7 @@ const StyledMain = styled('main', {
     flexGrow: 1,
     overflow: 'hidden auto',
     maxHeight: "calc(100vh - 64px)",
-    background: "#1D1D1D",
+    background: "$primaryBackground",
     alignItems: "left",
     alignContent: "center",
     flexDirection: "column",

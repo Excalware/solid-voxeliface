@@ -28,6 +28,15 @@ const StyledButton = styled('a', {
 
     variants: {
         size: {
+            medium: {
+                padding: '.375rem .825rem',
+                fontSize: 16,
+                boxShadow: '#00000024 0px 2px 10px',
+                fontWeight: 700,
+                textShadow: 'none',
+                fontFamily: 'Nunito Sans',
+                borderRadius: 6
+            },
             small: {
                 padding: ".375rem .625rem"
             },
@@ -78,6 +87,31 @@ const StyledButton = styled('a', {
                     color: "#cfcfcf",
                     opacity: 0.5
                 }
+            },
+            alert: {
+                color: "$red10",
+                background: "$red6",
+                "&:hover": {
+                    background: "$red7"
+                },
+                "&[disabled]": {
+                    color: "#cfcfcf",
+                    opacity: 0.5
+                }
+            }
+        },
+        version: {
+            new: {
+                color: '#d18080',
+                padding: '.375rem .825rem',
+                fontSize: 16,
+                boxShadow: '#00000024 0px 2px 10px, inset #00000029 0 0 0 2px',
+                fontWeight: 700,
+                textShadow: 'none',
+                background: '#c9565680',
+                fontFamily: 'Nunito Sans',
+                borderRadius: 6,
+                letterSpacing: .2
             }
         }
     }

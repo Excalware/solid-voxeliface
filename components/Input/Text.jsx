@@ -1,16 +1,14 @@
 import React from 'react';
 import { styled } from '@stitches/react';
 
-import Grid from '../Grid';
-
 const StyledInput = styled('div', {
     position: "relative"
 });
 
 const StyledInputTag = styled('input', {
-    color: "rgba(255, 255, 255, 0.8)",
+    color: "$secondaryColor",
     width: "100%",
-    border: "1px solid #343434",
+    border: "1px solid $tagBorder",
     outline: "none",
     padding: "8px 16px",
     minWidth: 196,
@@ -25,8 +23,8 @@ const StyledInputTag = styled('input', {
         cursor: "default"
     },
     "&:not(:read-only):focus": {
-        borderColor: "#797979",
-        background: "rgba(255, 255, 255, 0.01)"
+        background: "rgba(255, 255, 255, 0.01)",
+        borderColor: "#797979"
     },
     "&:disabled": {
         cursor: "not-allowed",

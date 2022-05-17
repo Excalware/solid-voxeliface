@@ -1,9 +1,9 @@
 {
     "name": "voxeliface",
     "version": "1.0.0",
-    "homepage": "https://github.com/Excalware/react-voxeliface",
+    "homepage": "https://github.com/Excalware/solid-voxeliface",
     "repository": {
-        "url": "https://github.com/Excalware/react-voxeliface.git",
+        "url": "https://github.com/Excalware/solid-voxeliface.git",
         "type": "git"
     },
     "author": "Blookers",

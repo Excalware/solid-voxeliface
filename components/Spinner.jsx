@@ -1,5 +1,4 @@
-import React from 'react';
-import { styled, keyframes } from '@stitches/react';
+import { styled, keyframes } from 'solid-stitches';
 
 const Animation1 = keyframes({
     '0%': {
@@ -77,19 +76,15 @@ const StyledSpinner2 = styled('span', {
     }
 });
 
-export default class Spinner extends React.Component {
-    render() {
-        const { margin, visible } = this.props;
-        const size = this.props.size ?? 32;
-        return (
-            <StyledSpinner style={{
-                "--size": `${size}px`,
-                margin: margin ?? 0,
-                display: `${(visible == null ? true : visible) ? "block" : "none"}`,
-                overflow: 'hidden'
-            }}>
-                <StyledSpinner2/>
-            </StyledSpinner>
-        );
-    }
+export default function Spinner({ size = 32, margin, visible}) {
+    return (
+        <StyledSpinner style={{
+            "--size": `${size}px`,
+            margin: margin ?? 0,
+            display: `${(visible == null ? true : visible) ? "block" : "none"}`,
+            overflow: 'hidden'
+        }}>
+            <StyledSpinner2/>
+        </StyledSpinner>
+    );
 };

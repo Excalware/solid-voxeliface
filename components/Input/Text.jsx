@@ -1,5 +1,4 @@
-import React from 'react';
-import { styled } from '@stitches/react';
+import { styled } from 'solid-stitches';
 
 const StyledInput = styled('div', {
     position: "relative"
@@ -45,17 +44,15 @@ const StyledButtons = styled('div', {
     }
 });
 
-export default class TextInput extends React.Component {
-    render() {
-        return (
-            <StyledInput style={{
-                width: this.props.width
-            }}>
-                <StyledInputTag id={this.props.id} value={this.props.value} onBlur={this.props.onBlur} readOnly={this.props.readOnly} onChange={this.props.onChange} disabled={this.props.disabled} placeholder={this.props.placeholder}/>
-                <StyledButtons>
-                    {this.props.children}
-                </StyledButtons>
-            </StyledInput>
-        );
-    }
+export default function TextInput({ id, width, value, onBlur, onChange, children, disabled, placeholder }) {
+    return (
+        <StyledInput style={{
+            width: width
+        }}>
+            <StyledInputTag id={id} value={value} onBlur={onBlur} readOnly={readOnly} onChange={onChange} disabled={disabled} placeholder={placeholder}/>
+            <StyledButtons>
+                {children}
+            </StyledButtons>
+        </StyledInput>
+    );
 };

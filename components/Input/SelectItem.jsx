@@ -1,6 +1,6 @@
-import React from 'react';
-import { styled } from '@stitches/react';
-import { Check } from 'react-bootstrap-icons';
+
+import { styled } from 'solid-stitches';
+import { Check } from 'solid-icons/bs';
 
 import Grid from '../Grid';
 

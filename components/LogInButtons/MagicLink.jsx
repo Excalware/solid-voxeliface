@@ -1,5 +1,5 @@
-import React from 'react';
-import { Magic } from 'react-bootstrap-icons';
+
+import { Magic } from 'solid-icons/bs';
 
 import Button from '../Button';
 

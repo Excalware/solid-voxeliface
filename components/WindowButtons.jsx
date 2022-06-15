@@ -1,8 +1,7 @@
-import React from 'react';
-import { styled } from '@stitches/react';
+import { styled } from 'solid-stitches';
 import { exit } from '@tauri-apps/api/process';
 import { appWindow } from '@tauri-apps/api/window';
-import { XLg, Fullscreen, FullscreenExit } from 'react-bootstrap-icons';
+import { BsXLg, BsFullscreen, BsFullscreenExit } from 'solid-icons/bs';
 
 import Grid from './Grid';
 
@@ -35,13 +34,13 @@ export default function WindowButtons() {
                     color: "#ff7070"
                 }
             }}>
-                <XLg/>
+                <BsXLg/>
             </WindowButtonComponent>
             <WindowButtonComponent onClick={maximize}>
-                <Fullscreen/>
+                <BsFullscreen/>
             </WindowButtonComponent>
             <WindowButtonComponent onClick={minimize}>
-                <FullscreenExit/>
+                <BsFullscreenExit/>
             </WindowButtonComponent>
         </StyledWindowButtons>
     );

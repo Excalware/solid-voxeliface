@@ -1,5 +1,5 @@
-import React from 'react';
-import { styled, keyframes } from '@stitches/react';
+
+import { styled, keyframes } from 'solid-stitches';
 
 import Grid from './Grid';
 import Typography from './Typography';

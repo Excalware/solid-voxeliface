@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { styled } from '@stitches/react';
-import { CaretDownFill } from 'react-bootstrap-icons';
+import { styled } from 'solid-stitches';
+import { CaretDownFill } from 'solid-icons/bs';
 
 import Grid from '../Grid';
 

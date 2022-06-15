@@ -1,22 +1,21 @@
-import React from 'react';
-import { styled } from '@stitches/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { styled } from 'solid-stitches';
+import { Link } from 'solid-app-router';
 
-const StyledLink = styled(RouterLink, {
+const StyledLink = styled(Link, {
     gap: 8,
-    color: "#7a98d1",
-    cursor: "pointer",
-    display: "flex",
-    fontSize: "1rem",
-    transition: "color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-    fontFamily: "Gotham, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif",
+    color: '#7a98d1',
+    cursor: 'pointer',
+    display: 'flex',
+    fontSize: '1rem',
+    transition: 'color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    fontFamily: 'Gotham, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif',
     fontWeight: 500,
     lineHeight: 1.43,
-    alignItems: "center",
-    textDecoration: "none",
+    alignItems: 'center',
+    textDecoration: 'none',
 
-    "&:hover": {
-        color: "#fff"
+    '&:hover': {
+        color: '#fff'
     }
 });
 

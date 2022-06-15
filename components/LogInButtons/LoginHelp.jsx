@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChatDotsFill } from 'react-bootstrap-icons';
+
+import { ChatDotsFill } from 'solid-icons/bs';
 
 import Button from '../Button';
 

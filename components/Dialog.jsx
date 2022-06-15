@@ -1,5 +1,5 @@
-import React from 'react';
-import { styled, keyframes } from '@stitches/react';
+
+import { styled, keyframes } from 'solid-stitches';
 import { blackA, mauveDark } from '@radix-ui/colors';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 

@@ -1,4 +1,4 @@
-import { createStitches } from '@stitches/react';
+import { createStitches } from 'solid-stitches';
 export const { styled, getCssText } = createStitches({
     
 });

@@ -1,5 +1,4 @@
-import React from 'react';
-import { styled } from '@stitches/react';
+import { styled } from 'solid-stitches';
 
 const StyledButton = styled('a', {
     gap: 8,
@@ -117,13 +116,14 @@ const StyledButton = styled('a', {
     }
 });
 
-export default function Button({ size, theme, onClick, disabled, children, ...props }) {
+export default function Button(props) {
+    console.log(props.disabled);
     return (
-        <StyledButton {...props} size={size ?? "small"} theme={theme ?? "primary"} onClick={(...args) => {
-            if(!disabled && onClick)
-                return onClick(...args);
-        }} disabled={disabled}>
-            {children ?? "Button"}
+        <StyledButton {...props} size={props.size ?? "small"} theme={props.theme ?? "primary"} onClick={(...args) => {
+            if(!props.disabled && props.onClick)
+                return props.onClick(...args);
+        }} attr:disabled={props.disabled}>
+            {props.children ?? "Button"}
         </StyledButton>
     );
 };

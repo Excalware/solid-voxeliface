@@ -1,6 +1,6 @@
-import React from 'react';
-import { styled } from '@stitches/react';
-import * as Icon from 'react-bootstrap-icons';
+
+import { styled } from 'solid-stitches';
+import * as Icon from 'solid-icons/bs';
 
 const StyledLink = styled('a', {
     width: '100%',

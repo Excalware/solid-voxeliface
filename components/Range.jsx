@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import Grid from '/voxeliface/components/Grid';
 

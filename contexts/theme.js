@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext } from 'solid-js';
 export default createContext({
     theme: 'default',
     setTheme: () => {}

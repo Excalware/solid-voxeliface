@@ -1,5 +1,5 @@
-import React from 'react';
-import { Discord } from 'react-bootstrap-icons';
+
+import { Discord } from 'solid-icons/bs';
 
 import Button from '../Button';
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { styled, keyframes } from '@stitches/react';
+
+import { styled, keyframes } from 'solid-stitches';
 
 const Animation1 = keyframes({
     '0%': {

@@ -1,5 +1,5 @@
-import React from 'react';
-import { styled } from '@stitches/react';
+
+import { styled } from 'solid-stitches';
 
 const StyledMain = styled('main', {
     display: "flex",
